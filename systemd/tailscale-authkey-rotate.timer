@@ -1,0 +1,11 @@
+[Unit]
+Description=Weekly Tailscale auth key rotation (Docker Swarm secret)
+
+[Timer]
+OnCalendar=weekly
+RandomizedDelaySec=2h
+Persistent=true
+Unit=tailscale-authkey-rotate.service
+
+[Install]
+WantedBy=timers.target
